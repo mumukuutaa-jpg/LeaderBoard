@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Server Leaderboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #2f3136;
+            color: #dcddde;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .leaderboard {
+            width: 100%;
+            max-width: 500px;
+            background-color: #36393f;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .title {
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #202225;
+            padding-bottom: 10px;
+        }
+        .rank-list {
+            list-style: none;
+        }
+        .rank-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background-color: #2f3136;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        /* Top 3 Highlighting */
+        .rank-item.top-1 { border-left: 5px solid #ffd700; background-color: #383525; }
+        .rank-item.top-2 { border-left: 5px solid #c0c0c0; background-color: #32353b; }
+        .rank-item.top-3 { border-left: 5px solid #cd7f32; background-color: #35302b; }
+        
+        .user-info { display: flex; align-items: center; gap: 10px; }
+        .place { font-weight: bold; width: 35px; }
+        .gold { color: #ffd700; }
+        .silver { color: #c0c0c0; }
+        .bronze { color: #cd7f32; }
+        .points { color: #b9bbbe; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div class="leaderboard">
+        <h1 class="title">🏆 Server Leaderboard</h1>
+        <ul class="rank-list">
+            <li class="rank-item top-1"><div class="user-info"><span class="place gold">🥇 1st</span><span>UserOne</span></div><span class="points">1,500 pts</span></li>
+            <li class="rank-item top-2"><div class="user-info"><span class="place silver">🥈 2nd</span><span>UserTwo</span></div><span class="points">1,400 pts</span></li>
+            <li class="rank-item top-3"><div class="user-info"><span class="place bronze">🥉 3rd</span><span>UserThree</span></div><span class="points">1,300 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">4th</span><span>UserFour</span></div><span class="points">1,200 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">5th</span><span>UserFive</span></div><span class="points">1,100 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">6th</span><span>UserSix</span></div><span class="points">1,000 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">7th</span><span>UserSeven</span></div><span class="points">900 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">8th</span><span>UserEight</span></div><span class="points">800 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">9th</span><span>UserNine</span></div><span class="points">700 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">10th</span><span>UserTen</span></div><span class="points">600 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">11th</span><span>UserEleven</span></div><span class="points">500 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">12th</span><span>UserTwelve</span></div><span class="points">400 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">13th</span><span>UserThirteen</span></div><span class="points">300 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">14th</span><span>UserFourteen</span></div><span class="points">200 pts</span></li>
+            <li class="rank-item"><div class="user-info"><span class="place">15th</span><span>UserFifteen</span></div><span class="points">100 pts</span></li>
+        </ul>
+    </div>
+
+</body>
+                                    </html>
+
