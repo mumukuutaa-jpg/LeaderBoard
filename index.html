@@ -12,7 +12,7 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #2f3136;
+            background-color: #202225;
             color: #dcddde;
             display: flex;
             justify-content: center;
@@ -22,18 +22,18 @@
         }
         .leaderboard-card {
             width: 100%;
-            max-width: 520px;
-            background-color: #36393f;
-            border-radius: 12px;
+            max-width: 560px;
+            background-color: #2f3136;
+            border-radius: 16px;
             padding: 24px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-            border: 1px solid #202225;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            border: 1px solid #36393f;
         }
         .header {
             text-align: center;
             margin-bottom: 24px;
             padding-bottom: 16px;
-            border-bottom: 2px solid #202225;
+            border-bottom: 2px solid #36393f;
         }
         .header h1 {
             color: #ffffff;
@@ -53,27 +53,31 @@
             justify-content: space-between;
             align-items: center;
             padding: 12px 16px;
-            margin-bottom: 8px;
-            background-color: #2f3136;
-            border-radius: 8px;
+            margin-bottom: 10px;
+            background-color: #36393f;
+            border-radius: 10px;
             transition: transform 0.15s ease, background-color 0.15s ease;
         }
         .rank-item:hover {
             background-color: #40444b;
             transform: translateY(-2px);
         }
-        /* Top 3 Highlighting */
+        
+        /* Top 3 Highlighting with Glowing Borders */
         .rank-item.top-1 {
-            border-left: 5px solid #ffd700;
-            background-color: #383525;
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            background: linear-gradient(90deg, #3d3820 0%, #36393f 100%);
         }
         .rank-item.top-2 {
-            border-left: 5px solid #c0c0c0;
-            background-color: #32353b;
+            border: 1px solid #c0c0c0;
+            box-shadow: 0 0 10px rgba(192, 192, 192, 0.15);
+            background: linear-gradient(90deg, #35383e 0%, #36393f 100%);
         }
         .rank-item.top-3 {
-            border-left: 5px solid #cd7f32;
-            background-color: #35302b;
+            border: 1px solid #cd7f32;
+            box-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
+            background: linear-gradient(90deg, #3d3127 0%, #36393f 100%);
         }
         
         .user-info {
@@ -84,22 +88,62 @@
         .place {
             font-weight: bold;
             font-size: 15px;
-            width: 45px;
+            width: 42px;
         }
         .gold { color: #ffd700; }
         .silver { color: #c0c0c0; }
         .bronze { color: #cd7f32; }
+        
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background-color: #5865f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 14px;
+        }
+        
+        .user-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
         .username {
             color: #ffffff;
             font-weight: 600;
             font-size: 15px;
         }
+        .handle {
+            color: #8e9297;
+            font-size: 12px;
+        }
+        
+        /* Role Badges */
+        .role-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .role-admin { background-color: #ed4245; color: #fff; }
+        .role-vip { background-color: #faa81a; color: #fff; }
+        .role-member { background-color: #4f545c; color: #dcddde; }
+
         .points-badge {
             background-color: #202225;
             color: #5865f2;
             font-weight: 700;
             font-size: 13px;
-            padding: 4px 10px;
+            padding: 6px 12px;
             border-radius: 12px;
         }
     </style>
@@ -113,68 +157,218 @@
         </div>
         <ul class="rank-list">
             <li class="rank-item top-1">
-                <div class="user-info"><span class="place gold">🥇 1st</span><span class="username">UserOne</span></div>
+                <div class="user-info">
+                    <span class="place gold">🥇 1st</span>
+                    <div class="avatar" style="background-color: #ed4245;">U1</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserOne</span>
+                            <span class="role-badge role-admin">Admin</span>
+                        </div>
+                        <span class="handle">@user_one</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item top-2">
-                <div class="user-info"><span class="place silver">🥈 2nd</span><span class="username">UserTwo</span></div>
+                <div class="user-info">
+                    <span class="place silver">🥈 2nd</span>
+                    <div class="avatar" style="background-color: #faa81a;">U2</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserTwo</span>
+                            <span class="role-badge role-vip">VIP</span>
+                        </div>
+                        <span class="handle">@user_two</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item top-3">
-                <div class="user-info"><span class="place bronze">🥉 3rd</span><span class="username">UserThree</span></div>
+                <div class="user-info">
+                    <span class="place bronze">🥉 3rd</span>
+                    <div class="avatar" style="background-color: #5865f2;">U3</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserThree</span>
+                            <span class="role-badge role-vip">VIP</span>
+                        </div>
+                        <span class="handle">@user_three</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">4th</span><span class="username">UserFour</span></div>
+                <div class="user-info">
+                    <span class="place">4th</span>
+                    <div class="avatar">U4</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserFour</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_four</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">5th</span><span class="username">UserFive</span></div>
+                <div class="user-info">
+                    <span class="place">5th</span>
+                    <div class="avatar">U5</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserFive</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_five</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">6th</span><span class="username">UserSix</span></div>
+                <div class="user-info">
+                    <span class="place">6th</span>
+                    <div class="avatar">U6</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserSix</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_six</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">7th</span><span class="username">UserSeven</span></div>
+                <div class="user-info">
+                    <span class="place">7th</span>
+                    <div class="avatar">U7</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserSeven</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_seven</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">8th</span><span class="username">UserEight</span></div>
+                <div class="user-info">
+                    <span class="place">8th</span>
+                    <div class="avatar">U8</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserEight</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_eight</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">9th</span><span class="username">UserNine</span></div>
+                <div class="user-info">
+                    <span class="place">9th</span>
+                    <div class="avatar">U9</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserNine</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_nine</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">10th</span><span class="username">UserTen</span></div>
+                <div class="user-info">
+                    <span class="place">10th</span>
+                    <div class="avatar">U10</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserTen</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_ten</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">11th</span><span class="username">UserEleven</span></div>
+                <div class="user-info">
+                    <span class="place">11th</span>
+                    <div class="avatar">U11</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserEleven</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_eleven</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">12th</span><span class="username">UserTwelve</span></div>
+                <div class="user-info">
+                    <span class="place">12th</span>
+                    <div class="avatar">U12</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserTwelve</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_twelve</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">13th</span><span class="username">UserThirteen</span></div>
+                <div class="user-info">
+                    <span class="place">13th</span>
+                    <div class="avatar">U13</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserThirteen</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_thirteen</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">14th</span><span class="username">UserFourteen</span></div>
+                <div class="user-info">
+                    <span class="place">14th</span>
+                    <div class="avatar">U14</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserFourteen</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_fourteen</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
             <li class="rank-item">
-                <div class="user-info"><span class="place">15th</span><span class="username">UserFifteen</span></div>
+                <div class="user-info">
+                    <span class="place">15th</span>
+                    <div class="avatar">U15</div>
+                    <div class="user-details">
+                        <div class="name-row">
+                            <span class="username">UserFifteen</span>
+                            <span class="role-badge role-member">Member</span>
+                        </div>
+                        <span class="handle">@user_fifteen</span>
+                    </div>
+                </div>
                 <span class="points-badge">0 scams</span>
             </li>
         </ul>
     </div>
 
 </body>
-</html>
-
+                        </html>
+    
